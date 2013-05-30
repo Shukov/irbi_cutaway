@@ -1,453 +1,333 @@
-﻿@charset "utf-8";
-
-
-/*cxcxzczx*/
-
-
+@charset "utf-8";
 /* --------------------------------------------------------------
 -----------------------------------------------------------------
-
-
 
 	AUTHOR:      ZHUKOV VALENTIN
 	VERSION:     2013-04-17
 
 	CONTENTS:
-	0. FONT-FACE (for perf)
 
-	1. RESET
+	0. ШРИФТ (fonts.googleapis.com)
+	    0.1 'Sofadi One', cursive
 
-	2. DEFAULT ELEMENT STYLES
-		2.1 BODY
-		2.2 LINK STYLES
-		2.3 HEADINGS
-		2.4 OTHER ELEMENTS
-		2.5 QUOTES
+	1. СБРОС
 
-	2. BASE
-		2.1 HEADER STYLES
-			2.1.1  Top Nav Styles
-			2.1.2  Main Nav Styles
-			2.1.3  Searchform Styles
-			2.1.4  Breadcrumbs
+	2. ОСНОВНЫЕ ЭЛЕМЕНТЫ
 
-		2.2 POST STYLES
-			2.2.1  Post Header
-			2.2.2  Post Entry
-			2.2.3  Post Aside
-			2.2.4  Single Page Single Styles
-			2.2.5  Author Styles
-
-		2.3 COMMENT STYLES
-
-		2.4 COMMENT FORM STYLES
-
-		2.5 HOMEPAGE STYLES
-			2.5.1  Opener Styles
-			2.5.2  Glossary Styles
-			2.5.3  Small Post Styles
-			2.5.4  Pagination Styles
-
-		2.6 SIDEBAR/SECONDARY STYLES
-			2.6.1  Lanyrd Styles
-			2.6.2  UI Tab Styles
-
-		2.7 SUBFOOTER STYLES
-
-		2.8 FOOTER STYLES
+	3. СТИЛИ ШАБЛОНА
+	    3.1 basic
+	    3.2 header
+	    3.3 content
+	    3.4 footer
 
 
-	3. EXTRAS
-		3.1 FORMATTING STYLES
-			 3.1.1  Block Styles
-			 3.1.2  Sidenote Styles
-			 3.1.3  Column Styles
-			 3.1.4  Box Shadow Styles
-			 3.1.5  Align Styles
-			 3.1.6  Table Styles
-
-		3.2 BUTTON STYLES
-
-		3.3 BROWSER SPECIFIC
-
-
-	4. GLOSSARY
-
-	5. super-sekret oli.jp styles (were to be used as a base)
 -----------------------------------------------------------------
 -------------------------------------------------------------- */
 
 
 
-/* 0 FONT FACE
----------------------------------------------------------
-===========================================================================*/
-@font-face {
-    font-family: 'Quicksand';
-    src: url('fonts/Quicksand_Book-webfont.eot');
-    src: local('☺'), url('fonts/Quicksand_Book-webfont.woff') format('woff'), url('fonts/Quicksand_Book-webfont.ttf') format('truetype'), url('fonts/Quicksand_Book-webfont.svg#webfontQvsv8Mp8') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Quicksand';
-    src: url('fonts/Quicksand_Book_Oblique-webfont.eot');
-    src: local('☺'), url('fonts/Quicksand_Book_Oblique-webfont.woff') format('woff'), url('fonts/Quicksand_Book_Oblique-webfont.ttf') format('truetype'), url('fonts/Quicksand_Book_Oblique-webfont.svg#webfontDkcdglAy') format('svg');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Quicksand';
-    src: url('fonts/Quicksand_Bold-webfont.eot');
-    src: local('☺'), url('fonts/Quicksand_Bold-webfont.woff') format('woff'), url('fonts/Quicksand_Bold-webfont.ttf') format('truetype'), url('fonts/Quicksand_Bold-webfont.svg#webfontA4fKbYnS') format('svg');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Quicksand';
-    src: url('fonts/Quicksand_Bold_Oblique-webfont.eot');
-    src: local('☺'), url('fonts/Quicksand_Bold_Oblique-webfont.woff') format('woff'), url('fonts/Quicksand_Bold_Oblique-webfont.ttf') format('truetype'), url('fonts/Quicksand_Bold_Oblique-webfont.svg#webfontijreB3Ak') format('svg');
-    font-weight: bold;
-    font-style: italic;
-}
-
-
-/* 1. RESET
+/* 1. СБРОС
 -----------------------------------------------------------------------------------------------
 ===============================================================================================*/
-/* http://meyerweb.com/eric/tools/css/reset/ */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{
-    margin:0;
+a, abbr, acronym, address, applet, article, aside, audio, b, blockquote, big, body, center, canvas, caption, cite, code, command, datalist, dd, del, details, dfn, dl, div, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, keygen, label, legend, li, meter, nav, object, ol, output, p, pre, progress, q, s, samp, section, small, span, source, strike, strong, sub, sup, table, tbody, tfoot, thead, th, tr, tdvideo, tt, u, ul, var {
+    background: transparent;
+    border: 0 none;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: top;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+table, table td {
     padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    font:inherit;
-    vertical-align:baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
-    display:block;
-}
-nav ul{
-    list-style:none;
-}
-table{
+    border:none;
     border-collapse:collapse;
-    border-spacing:0;
+}
+img {
+    vertical-align:top;
+}
+embed {
+    vertical-align:top;
+}
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {
+    display:block
+}
+mark, rp, rt, ruby, summary, time {
+    display:inline
 }
 
-/* 2.1 BODY DEFAULTS
---------------------------------------------------------- */
+
+/* 2. ОСНОВНЫЕ ЭЛЕМЕНТЫ
+-----------------------------------------------------------------------------------------------
+===============================================================================================*/
 html, body {
     height: 100%;
 }
-html{
-    margin-bottom: 1px;
-    min-height: 100%;
-}
+
 body {
-    background: #F0F0F0;
-    color: #444;
-    font-family: Georgia, serif;
-    font-size: 62.5%;
-}
-html>body {
-    font-size: 16px;
-}
-p, blockquote, footer {
+    font-family: 'Sofadi One', cursive;
     font-size: 1em;
-    line-height: 1.5;
-} /* TODO: fix me —oli */
-
-/* 2.2 LINK STYLES
---------------------------------------------------------- */
-a, a:visited{
-    color: #0090D2;
-    text-decoration: none;
-}
-a:hover {color: #0063A6;}
-a:active,a:focus{
-    color: #0063A6;
-    position: relative;
-    top: 1px;
+    font-weight: normal;
+    line-height: 1.4;
 }
 
-/* TEMPLATE COLOURS */
-.blue   {color: #0098d8}
-.red    {color: #de1638}
-.orange {color: #dd7737}
-.green1 {color: #a59e10}
-.green2 {color: #868507}
-
-
-/* 2.3 HEADINGS
---------------------------------------------------------- */
-h1, h2, h3 {
-    font-family: 'Quicksand','Helvetica Neue',Arial, sans-serif;
-    font-weight: bold;
+body{
+    background: url("/media/img/template/curcle.png") no-repeat;
+    background-position: top center;
 }
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
 h1{
-    font-size: 2em;
-    line-height: 1;
-    letter-spacing: -2px;
-    word-spacing: 2px;
+    font-size: 1.8em;
+    line-height: 1.8em;
 }
 h2{
-    font-size: 1.5em;
-    line-height: 1.25;
-    margin: 1.5833em 0 .6667em;
+    font-size: 1.6em;
+    line-height: 1.6em;
 }
-h3 {
-    font-size: 1.25em;
-    line-height: 1.2;
-    margin: 1.8em 0 .6em;
+h3{
+    font-size: 1.4em;
+    line-height: 1.3em;
 }
-h4 {
-    font-size: 1.125em;
-    line-height: 1.3333em;
-    margin: 2em 0 .6667em;
+h4{
+    font-size: 1.2em;
+    line-height: 1.2em;
 }
-h5, dt {
-    font-weight: bold;
+p{
+    line-height: 1em;
+    font-family: Georgia, serif;
 }
-h4, h5, h6, dt {
-    font-family: "Helvetica Neue","Bitstream Vera Sans",Arial,sans-serif;
+span{
+    color: #444;
+    font-family: Georgia, serif;
 }
-
-
-/* 2.4 OTHER ELEMENTS
---------------------------------------------------------- */
-hr, .hide {
-    display: none;
-}
-a img{
-    border: none;
-}
-div {
-    position: relative;
-}
-dl {
-    line-height: 1.5;
-    margin:1.5em 0;
-}
-dd { margin-bottom:0.8em; }
-li p {
-    margin: 0;
-}
-li p + p {
-    margin-top: 1.5em;
-}
-li ul, li ol, li dl, dd ol, dd ul, dd dl {
-    margin: 0 0 0 1.5em;
-}
-strong, b, figcaption em, figcaption i, caption em, caption i {
-    font-weight: bold;
-}
-em, i, cite {
-    font-style: italic;
-}
-dfn {
-    font-weight: bold;
-}
-small, .small {
-    font-size: .875em;
-}
-sup, sub {
-    line-height: 0;
-}
-abbr[title], dfn[title] {
-    border-bottom: 1px dotted #666;
-}
-address {
-    margin: 0 0 1.5em;
-    font-style: italic;
-}
-address + p {
-    margin-top: 0;
-}
-pre {
-    /* http://perishablepress.com/press/2010/06/01/wrapping-content/ */
-    margin: 1.5em 0;
-    white-space: pre;
-    word-wrap: break-word;
-    white-space: -moz-pre-wrap;
-    white-space: -o-pre-wrap;
-    white-space: -pre-wrap;
-    white-space: -hp-pre-wrap;
-    white-space: pre-wrap;
-    white-space: pre-line;
-}
-pre,code,tt,kbd {
-    font: .9375em 'andale mono','lucida console',monospace;
-    line-height: 1.6;
-}
-/* ins/del */
-ins {
-    border-bottom: 1px dotted #47ad09;
-    text-decoration: none;
-}
-del {
-    text-decoration: line-through;
-}
-del, .faint {
-    color: #777;
-}
-mark {
-    background-color:#f8fea8;
-    color: #000;
+.clear{
+    clear: both;
 }
 
-/* figure */
-figure {
-    position: relative;
-    margin: 1.5em 0;
-    border-top: 1px dotted #0098d8;
-    border-bottom: 1px dotted #0098d8;
-}
-figure dt {
-    margin-top: .75em;
-} /* to check: ?? do I mean dl? */
-figure dd {
-    margin-left: 0;
-    padding-left: 0;
-}
-figure img, figure iframe {
-    margin: .75em auto;
-}
-figure blockquote {
-    margin: 1.5em 0 .75em -1.5em;
-}
-figure ul, figure ol {
-    margin: .75em 0 .75em 2em;
-}
-figure .semantic-list {
-    margin-left: 0;
-}
-figure li ul, figure li ol {
-    margin: 0 0 0 1.5em;
-}
-figure p, figure pre {
-    margin-top: .75em;
-    margin-bottom: .75em;
-}
-figure p+p {
-    margin-top: 1.5em;
-}
-figcaption {
-    clear: left;
-    margin: .75em 0;
-    text-align: center;
-    font-style: italic;
-    line-height: 1.5em;
-}
+/*====== color =======*/
+.blue{color: #0f85cb;}
+.green{color: #099616;}
+.orange{color: #e57916}
+.yellow{clor: #f9c300;}
 
 
-/* 2.5 BLOCKQUOTES AND QUOTES
---------------------------------------------------------- */
-blockquote {
-    border-left: 0.5em solid #DDD;
-}
-li blockquote {
-    margin-left: 0;
-}
-blockquote p {
-    margin: 0;
-}
-blockquote p+p {
-    margin-top: 1.5em;
-}
-blockquote footer {
-    margin-bottom: 0;
-}
-blockquote blockquote, .callout blockquote, blockquote ol, blockquote ul {
-    margin-left: 1.5em;
-    margin-right: .75em;
-}
-blockquote>blockquote {
-    margin-top: .75em
-}
-.note-block blockquote {
-    font-style: normal;
-}
-blockquote mark {
-    font-weight: bold;
-}
-blockquote strong mark, blockquote mark strong {
-    font-style: italic;
-}
-/* Quotes for two levels of nested quotations */
-q {
-    quotes: '“' '”' '‘' '’';
-}
-/* extra content definitions for pre-2011 WebKit */
-q:before {
-    content: '“';
-    content: open-quote;
-}
-q:after {
-    content: '”';
-    content: close-quote;
-}
-q q:before {
-    content: '‘';
-    content: open-quote;
-}
-q q:after {
-    content: '’';
-    content: close-quote;
-}
-/* q in blockquote */
-blockquote q:before {
-    content: '‘';
-    content: open-quote;
-}
-blockquote q:after {
-    content: '’';
-    content: close-quote;
-}
-blockquote q q:before {
-    content: '“';
-    content: open-quote;
-}
-blockquote q q:after {
-    content: '”';
-    content: close-quote;
-}
-/* hanging opening quote */
-blockquote:before {
-    display: block;
-    height: 0;
-    content: "“";
-    margin-left: -.95em; font: italic 400%/1 Cochin,Georgia,"Times New Roman", serif;
-    color: #999;
-}
-
-/* 2. BASE
+/* 3. СТИЛИ ШАБЛОНА
 -----------------------------------------------------------------------------------------------
 ===============================================================================================*/
+/*----------- 3.1 basic ---------*/
 #wrap{
     min-height: 100%;
 }
 .inner {
     width: 960px;
-    padding: 0 30px;
-    margin: auto
+    margin: auto;
 }
 header[role="banner"]{
+    height: 243px;
 }
 
 #content[role="main"]{
     overflow: auto;
-    padding-bottom: 64px
+    padding-bottom: 128px;
 }
+
 footer[role="contentinfo"]{
-    padding: 16px 0 14px;
     position: relative;
-    margin-top: -64px;
-    height: 34px;
+    margin-top: -128px;
+    height: 128px;
     clear:both;
+}
+footer[role="contentinfo"] .hr{
+    height: 27px;
+    background: #d4eed5;
+    border-radius: 0 0 27px 27px;
+}
+/*==================== 3.2 header ===================================*/
+/*----- .wrap ---------*/
+header[role="banner"] .wrap{
+    height: 133px;
+    padding-top: 10px;
+}
+header[role="banner"] hgroup h1{
+    display: block;
+    background: url("/media/img/template/main.png") no-repeat -20px -13px;
+    width: 206px;
+    height: 108px;
+    text-indent: -9999em;
+    float: left;
+}
+header[role="banner"] hgroup h2{
+    width: 200px;
+    padding: 5px 30px;
+    border-left: 2px solid #333;
+    font-size: 1.3em;
+    line-height: 1em;
+    float: left;
+    margin-left: 50px;
+    margin-top: 40px;
+}
+
+header[role="banner"] li{
+    float: left;
+    padding: 0 10px;
+}
+header[role="banner"] a{
+    color: #ffffff;
+}
+
+header[role="banner"] a:visited{
+    color: #ffffff;
+}
+/*-------- nav[role="link"]------*/
+header nav[role="link"]{
+    float: right;
+    background: url('/media/img/template/main.png') no-repeat -248px -18px;
+    width: 343px;
+    height: 115px;
+    color: #ffffff;
+}
+header nav[role="link"] h3{
+    padding-top: 40px;
+    padding-left: 40px;
+    text-align: center
+}
+header nav[role="link"] ul{
+    margin-left: 126px;
+}
+
+/*------- nav[role="navigation"] ----*/
+header nav[role="navigation"]{
+    width: 100%;
+    height: 100px;
+    padding-top: 5px;
+    background: #007cc2;
+    border-radius: 20px 0 0 0;
+    position: relative;
+    clear: both;
+}
+header nav[role="navigation"] li{
+    width: 134px;
+    padding: 0;
+}
+header nav[role="navigation"] > ul > li{
+    border-right: 1px solid rgb(28, 159, 213);
+    height: 40px;
+    margin-top: 20px;
+}
+header nav[role="navigation"] > ul > li > a{
+    margin-top: -10px;
+    position: relative;
+    display: block;
+}
+header nav[role="navigation"] > ul > li:last-child{
+    border-right: 0;
+}
+
+header nav[role="navigation"] a > ul > li:first-child{
+    background: url("/media/img/template/main.png") no-repeat;
+    width: 57px;
+    height: 50px;
+    display: block;
+    padding: 0;
+    margin-left: 37px;
+}
+header nav[role="navigation"] a > ul > li{
+    text-align: center;
+    text-decoration: none;
+}
+header nav[role="navigation"] a > ul:hover{
+    color: #ffff00;
+}
+header nav[role="navigation"] a > ul > li.in1{
+    background-position: -30px -146px;
+}
+header nav[role="navigation"] a > ul > li.in2{
+    background-position: -113px -146px;
+}
+header nav[role="navigation"] a > ul > li.in3{
+    background-position: -196px -147px;
+}
+header nav[role="navigation"] a > ul > li.in4{
+    background-position: -278px -146px;
+}
+header nav[role="navigation"] a > ul > li.in5{
+    background-position: -363px -147px;
+}
+header nav[role="navigation"] a > ul > li.in6{
+    background-position: -441px -143px;
+}
+header nav[role="navigation"] a > ul > li.in7{
+    background-position: -520px -143px;
+}
+/*=============================== footer ================================*/
+/*----- nav --------*/
+footer[role="contentinfo"] nav > ul{
+    margin-top: 20px;
+    float: right;
+}
+footer[role="contentinfo"] nav > ul > li{
+    float: left;
+    padding: 0 10px;
+}
+footer[role="contentinfo"] nav > ul > li > a{
+    color: #999;
+    text-decoration: none;
+}
+footer[role="contentinfo"] nav > ul > li > a:hover{
+    color: #555;
+}
+/*----- .wrap -------*/
+footer[role="contentinfo"] .wrap{
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+/*------- .copyright -----*/
+footer[role="contentinfo"] .copyright, .share-social{
+    float: left;
+}
+footer[role="contentinfo"] .copyright h2{
+    display: block;
+    background: url('/media/img/template/main.png') no-repeat -10px -210px;
+    width: 50px;
+    height: 26px;
+    text-indent: -9999em;
+    float: left;
+}
+footer[role="contentinfo"] .copyright small{
+    padding-top: 5px;
+    padding-left: 60px;
+    display: block;
+}
+/*----- .share-social --------*/
+footer[role="contentinfo"] .share-social a{
+    background: url('/media/img/template/main.png') no-repeat;
+    width: 29px;
+    height: 26px;
+    display: block;
+}
+footer[role="contentinfo"] .share-social .facebook{
+    background-position: -80px -211px;
+}
+footer[role="contentinfo"] .share-social .twitter{
+    background-position: -122px -211px;
 }
